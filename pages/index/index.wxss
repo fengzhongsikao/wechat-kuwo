@@ -1,0 +1,124 @@
+/* 设置轮播图的区域样式 */
+.lunbotu{
+    width: 100%;
+    height: 300rpx;
+}
+
+/* 设置轮播图swiper样式 */
+.lunbo_swiper image{
+    width: 100%;
+    height: 300rpx;
+}
+
+/* 搜索框的区域 */
+.searcharea{
+    width: 100%;
+    height: 90rpx;
+    background-color: #87CEFA;
+    margin-top: 40rpx;
+    /* 弹性盒子布局 */
+    display: flex;
+}
+
+/* 搜索框区域展示 */
+.search_input{
+    width: 75%;
+    height: 70rpx;
+    background-color: white;
+    margin-top: 10rpx;
+    /* margin-left: 20rpx; */
+    border-radius: 20rpx;
+}
+.search_input input{
+    margin-top: 10rpx;
+    margin-left: 18rpx;
+}
+/* 搜索按钮区域展示 */
+.search_button{
+    display: flex;
+    width: 26%;
+    height: 90rpx;
+}
+.btn1{
+    height: 90rpx;
+}
+.search_button input{
+    font-size: 40rpx;
+    text-align: center;
+    margin-top: 25rpx;
+}
+
+/* 设置songList歌曲列表的展示区域的样式 */
+.songList{
+    width: 100%;
+    height: 120rpx;
+    background-color: #87CEFA;
+    margin-top: 10rpx;
+    /* 弹性盒子布局 */
+    display: flex;
+}
+/* 设置左边歌曲封面的区域 */
+.left{
+    width: 120rpx;
+    height: 120rpx;
+}
+.left image{
+    width: 110rpx;
+    height: 110rpx;
+    margin: 5rpx 5rpx;
+    border-radius: 20rpx;
+}
+/* 设置中间区域 */
+.center{
+    width: 500rpx;
+    height: 120rpx;
+}
+/* 歌曲名称的区域 */
+.songName{
+    width: 500rpx;
+    height: 60rpx;
+    /* 溢出隐藏 */
+    overflow: hidden;
+}
+.songName text{
+    font-size: 40rpx;
+    margin-left: 20rpx;
+    color:rgb(226, 79, 91);
+}
+/* 歌手以及已专辑的区域 */
+.singer{
+    width: 500rpx;
+    height: 50rpx;
+    overflow: hidden;
+}
+.singer text{
+    font-size: 35rpx;
+    margin-left: 20rpx;
+    color: rgb(55, 137, 230);
+}
+
+/* 设置右侧的区域 */
+.right-new{
+    width: 130rpx;
+    height: 120rpx;
+}
+.noMV image{
+    width: 80rpx;
+    height: 80rpx;
+    margin: 30rpx;
+}
+.hasMV image{
+    width: 60rpx;
+    height: 60rpx;
+    margin-left: 30rpx;
+}
+
+.right-old{
+    width: 130rpx;
+    height: 120rpx;
+}
+.right-old image{
+    width: 80rpx;
+    height: 80rpx;
+    margin: 30rpx;
+}

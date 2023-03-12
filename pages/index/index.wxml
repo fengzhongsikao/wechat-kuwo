@@ -1,0 +1,85 @@
+<!-- 轮播图的展示 -->
+<view class="lunbotu">
+    <swiper class="lunbo_swiper"
+            indicator-dots="true"
+            indicator-color="#878787"
+            indicator-active-color="red"
+            autoplay="true"
+            interval="3000"
+            circular="true">
+        <block>
+            <!-- 循环遍历的时候 索引 index  值  item -->
+            <swiper-item wx:for="{{lunbotu}}" wx:key="item">
+                <image src="{{item}}"></image>
+            </swiper-item>
+        </block>
+    </swiper>
+</view>
+
+<!-- 搜索框的区域 -->
+<view class="searcharea">
+    <!-- 搜索框 -->
+    <view class="search_input">
+        <!-- 动态获取文本框中的内容 bindinput -->
+        <input bindinput="getKeyWord" type="text"/>
+    </view>
+    <!-- 搜索按钮 -->
+    <view class="search_button">
+        <!-- 给搜索按钮绑定点击事件  bindtap -->
+        <!-- <input bindtap="searchMusic" type="button" value="搜索"/> -->
+        <input/>
+        <button  bindtap="searchMusic" type="primary" class="btn1">搜</button>
+    </view>
+</view>
+
+<!-- 歌曲列表展示页面 -->
+<view class="songList" wx:for="{{songList}}" wx:key="rid">
+    <!-- 左边的歌曲封面 -->
+    <view class="left">
+        <image src="{{item.pic}}"></image>
+    </view>
+    <!-- 中间区域 -->
+    <view class="center">
+        <!-- 歌曲名称的区域 -->
+        <view class="songName">
+            <text>{{item.name}}</text>
+        </view>
+        <!-- 歌手以及专辑名称的区域 -->
+        <view class="singer">
+            <text>{{item.artist}} -- 《{{item.album}}》</text>
+        </view>
+    </view>
+    <!-- 右边真实播放的图标 -->
+    <view class="right-old">
+        <image bindtap="playMusic" data-rid="{{item.rid}}" src="/image/运行.png"></image>
+    </view>
+</view>
+
+<!-- 搜索产生的新歌曲数组-->
+<view class="songList" wx:for="{{newSongs}}" wx:key="rid">
+    <!-- 左边的歌曲封面 -->
+    <view class="left">
+        <image src="{{item.pic}}"></image>
+    </view>
+    <!-- 中间区域 -->
+    <view class="center">
+        <!-- 歌曲名称的区域 -->
+        <view class="songName">
+            <text>{{item.name}}</text>
+        </view>
+        <!-- 歌手以及专辑名称的区域 -->
+        <view class="singer">
+            <text>{{item.artist}} -- 《{{item.album}}》</text>
+        </view>
+    </view>
+    <!-- 右边真实播放的图标 -->
+    <view class="right-new">
+        <view class="noMV" wx:if="{{item.hasmv == 0}}">
+            <image bindtap="playMusic" data-rid="{{item.rid}}" src="/image/运行.png"></image>
+        </view>
+        <view class="hasMV" wx:if="{{item.hasmv == 1}}">
+            <image bindtap="playMusic" data-rid="{{item.rid}}" src="/image/运行.png"></image>
+            <image bindtap="playMV" data-rid="{{item.rid}}" src="/image/播放MV.png"></image>
+        </view>
+    </view>
+</view>

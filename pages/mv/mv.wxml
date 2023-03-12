@@ -1,0 +1,56 @@
+<!-- 定义歌曲mv播放的区域 -->
+<view class="mv">
+   <video src="{{mvUrl}}" controls="true" autoplay="true"  	direction="-90 "></video>
+</view>
+
+<view class="p">
+    <text>热门评论</text>
+</view>
+<view class="newComment" wx:for="{{hotComments}}" wx:key="index">
+    <!-- 左边  评论者的头像信息 -->
+    <view class="left">
+        <image src="{{item.u_pic}}"></image>
+    </view>
+    <!-- 右边  评论人  评论内容  评论时间 -->
+    <view class="right">
+        <!-- 上 -->
+        <view class="top">
+            <text>{{item.u_name}}</text>
+        </view>
+        <!-- 中 -->
+        <view class="center">
+            <text>{{item.msg}}</text>
+        </view>
+        <!-- 下 -->
+        <view class="bottom">
+           <text>评论时间: {{item.time}}</text>
+        </view>
+    </view>
+
+</view>
+<view class="p">
+   <text>最新评论:</text>
+</view>
+<!-- mv评论的区域 -->
+<view class="newComment" wx:for="{{newComments}}" wx:key="index">
+    <!-- 左边  评论者的头像信息 -->
+    <view class="left">
+        <image src="{{item.u_pic}}"></image>
+    </view>
+    <!-- 右边  评论人  评论内容  评论时间 -->
+    <view class="right">
+        <!-- 上 -->
+        <view class="top">
+            <text>{{item.u_name}}</text>
+        </view>
+        <!-- 中 -->
+        <view class="center">
+            <text>{{item.msg}}</text>
+        </view>
+        <!-- 下 -->
+        <view class="bottom">
+           <text>评论时间: {{item.time}}</text>
+        </view>
+    </view>
+
+</view>

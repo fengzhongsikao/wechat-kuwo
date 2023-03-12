@@ -1,0 +1,38 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/find/find",
+    "pages/play/play",
+    "pages/mv/mv"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#87CEFA",
+    "navigationBarTitleText": "酷我音乐",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#838B8B"
+  },
+  "tabBar": {
+    "backgroundColor": "#87CEFA",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "/image/首页.png",
+      "selectedIconPath": "/image/首页.png"
+    }, {
+        "pagePath": "pages/find/find",
+        "text": "发现",
+        "iconPath": "/image/发现.png",
+        "selectedIconPath": "/image/发现.png"
+      },{
+      "pagePath": "pages/logs/logs",
+      "text": "我",
+      "iconPath": "/image/我的.png",
+      "selectedIconPath": "/image/我的.png"
+    }]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

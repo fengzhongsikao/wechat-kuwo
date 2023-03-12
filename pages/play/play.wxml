@@ -1,0 +1,70 @@
+<!-- 定义整个歌曲播放的区域 -->
+<view class="playContent">
+    <!-- 背景图片的区域 -->
+    <view class="back_img">
+        <image src="{{detailInfo.pic}}"></image>
+    </view>
+    <!-- 歌曲信息展示 -->
+    <view class="songInfo">
+        <!-- 歌曲名称 -->
+        <view class="songName">
+            <text>{{detailInfo.songName}}</text>
+        </view>
+        <!-- 歌手名称 专辑名称 -->
+        <view class="singer">
+            <text>{{detailInfo.artist}} -- 《{{detailInfo.album}}》</text>
+        </view>
+    </view>
+    <!-- 黑胶封面以及歌词区域 -->
+    <view class="content">
+       <swiper class="cd-swiper">
+            <!-- 黑胶封面 -->
+            <swiper-item class="cd-image">
+              <image style="animation-play-state: {{status == 'play'?'running':'paused'}};" src="{{detailInfo.pic}}"></image>
+            </swiper-item>
+            <!-- 歌词 -->
+            <swiper-item>
+                <scroll-view scroll-top="{{top}}rpx" class="lyric_view" scroll-y="true">
+                   <view class="cd_lyric">
+                        <block wx:for="{{lyrics}}" wx:key="lineIndex">
+                            <text class="{{lineIndex == index+1 ? 'currentIndex':''}}">{{item.lineLyric}}</text>
+                        </block>
+                   </view>
+                </scroll-view>
+            </swiper-item>
+       </swiper>
+    </view>
+
+    <!--  收藏图标 评论图标   -->
+
+    <!-- 歌曲播放进度条 -->
+    <view class="progress">
+        <!-- 歌曲播放时间 -->
+        <view class="playTime">
+            {{playTime}}
+        </view>
+        <!-- 进度条 -->
+        <view class="jindu">
+            <slider max="{{max}}" value="{{value}}" activeColor="#C67171" block-size="12" block-color="#8A8A8A" color="#FCFCFC">
+            </slider>
+        </view>
+        <!-- 歌曲总时间 -->
+        <view class="endTime">
+            {{endTime}}
+        </view>
+    </view>
+
+    <!-- 歌曲播放页面的控制区域 -->
+    <view class="controlers">
+        <!-- 播放模式 -->
+        <image src="/image/单曲循环.png"></image>
+        <!-- 上一首 -->
+        <image src="/image/上一首.png"></image>
+        <!-- 播放与暂停 -->
+        <image bindtap="playAndStop" src="/image/{{status == 'play' ? 'bf':'zt'}}.png"></image>
+        <!-- 下一首 -->
+        <image src="/image/下一首.png"></image>
+    </view>
+</view>
+
+<audio bindtimeupdate="changeMusic" action="{{music}}" src="{{mp3url}}"></audio>
